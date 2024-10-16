@@ -4,10 +4,7 @@ namespace WFA24101601;
 
 public partial class FrmDolgozatok : Form
 {
-    //DRY == Don't repeat yourself!
-
-
-    private List<Dolgozat> dolgozatok = new();
+    private List<Dolgozat> dolgozatok = [];
     private const string mentesiHely = "..\\..\\..\\src\\save.txt";
 
     public FrmDolgozatok()
@@ -23,7 +20,6 @@ public partial class FrmDolgozatok : Form
         rtbDolgozatok.Text += $"{d.Nev,-23} {d.Pontszam,3} pont\n";
         lblAtlag.Text = $"{dolgozatok.Average(d => d.Pontszam):0.00} pont";
     }
-
 
     private void BtnAdatbevitelClick(object? sender, EventArgs e)
     {
